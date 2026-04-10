@@ -666,10 +666,11 @@
       sig.style.padding = '5px';
       sig.style.display = 'inline-block';
 
+      const devicePixelRatio = window.devicePixelRatio || 1;
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: 2,
+        scale: devicePixelRatio * 0.51,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
@@ -681,12 +682,7 @@
       sig.style.background = '';
       sig.style.padding = '';
 
-      // Scale down to 51% of CSS pixel size for consistent output across devices
-      const scaledCanvas = document.createElement('canvas');
-      scaledCanvas.width  = Math.round(rect.width  * 0.51);
-      scaledCanvas.height = Math.round(rect.height * 0.51);
-      scaledCanvas.getContext('2d').drawImage(canvas, 0, 0, scaledCanvas.width, scaledCanvas.height);
-      jpegDataUrl = scaledCanvas.toDataURL('image/jpeg', 0.92);
+      jpegDataUrl = canvas.toDataURL('image/jpeg', 0.92);
 
       // Show preview
       const preview = document.getElementById('jpeg-preview');
