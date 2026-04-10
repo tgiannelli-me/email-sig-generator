@@ -580,9 +580,9 @@
   // The image has WS on top (~60%) and Triple O's on bottom (~40%)
   // We use CSS clip/object-position to show each portion
   const logos = {
-    ws: `<img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:54px;object-fit:cover;object-position:top;" alt="White Spot">`,
-    to: `<img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:36px;object-fit:cover;object-position:bottom;" alt="Triple O's">`,
-    both: `<img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;object-fit:contain;" alt="White Spot + Triple O's">`
+    ws:   `<div style="display:block;width:90px;height:54px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;" alt="White Spot"></div>`,
+    to:   `<div style="display:block;width:90px;height:36px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;margin-top:-54px;" alt="Triple O's"></div>`,
+    both: `<img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;" alt="White Spot + Triple O's">`
   };
 
   function getLogoHTML(brand) {
@@ -670,7 +670,7 @@
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: devicePixelRatio * 0.51,
+        scale: devicePixelRatio,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
