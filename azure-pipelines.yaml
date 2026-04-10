@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: CopyFilesOverSSH@0
+    displayName: 'Deploy signature-generator.html to FPT-dev-01'
+    inputs:
+      sshEndpoint: 'FPT-dev-01'
+      sourceFolder: '$(Build.SourcesDirectory)'
+      contents: 'signature-generator.html'
+      targetFolder: '/var/www/fpt/app/public'
+      cleanTargetFolder: false
+      overwrite: true
