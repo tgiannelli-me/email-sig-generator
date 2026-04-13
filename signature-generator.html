@@ -372,8 +372,11 @@
     font-size: 11px;
     font-weight: normal;
     color: #1a1a1a;
-    display: inline;
+    display: block;
+    line-height: 1.4;
     letter-spacing: 0.08em;
+    margin: 0;
+    padding: 0;
   }
 
   .sig-contact-line {
@@ -386,8 +389,9 @@
     margin-top: 2px;
   }
 
-  #sig-phone-line {
-    margin-top: 10px;
+  #sig-phone-line,
+  #sig-web {
+    margin-top: 0;
   }
 
   .sig-web-line {
@@ -492,7 +496,7 @@
       <div class="form-section-label">Contact</div>
       <div class="field">
         <label>Phone</label>
-        <input type="tel" id="f-phone" placeholder="604.321.6634" oninput="update()" />
+        <input type="tel" id="f-phone" placeholder="604.321.6634" value="555.555.5555" oninput="update()" />
       </div>
     </div>
 
@@ -548,9 +552,9 @@
                   <span class="sig-name" id="sig-name">Tom Giannelli</span>
                   <span class="sig-title" id="sig-title">VP, Technology + Business Intelligence</span>
                   <span class="sig-address"><span class="sig-company" id="sig-company">White Spot Limited</span> | <span id="sig-addr">200-8223 Sherbrooke Street</span></span>
-                  <span class="sig-contact-line"><span id="sig-cityline">Vancouver BC V5X 4E6</span></span>
-                  <span class="sig-contact-line" id="sig-phone-line">P: 604.321.6634</span>
-                  <span class="sig-web-line" id="sig-web">www.whitespot.ca | www.tripleos.com</span>
+                  <span class="sig-address"><span id="sig-cityline">Vancouver BC V5X 4E6</span></span>
+                  <span class="sig-address" id="sig-phone-line">P: 604.321.6634</span>
+                  <span class="sig-address" id="sig-web">www.whitespot.ca | www.tripleos.com</span>
                 </td>
               </tr>
             </table>
