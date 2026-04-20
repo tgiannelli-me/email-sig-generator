@@ -673,9 +673,11 @@
       sig.style.display = 'inline-block';
 
       const rect = sig.getBoundingClientRect();
+      const targetWidth = 408;
+      const targetHeight = 122;
 
       const canvas = await html2canvas(sig, {
-        scale: 1.38,
+        scale: 2,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
@@ -687,13 +689,18 @@
       sig.style.background = '';
       sig.style.padding = '';
 
-      jpegDataUrl = canvas.toDataURL('image/jpeg', 0.92);
+      // Resize canvas to exact target dimensions
+      const outCanvas = document.createElement('canvas');
+      outCanvas.width = targetWidth;
+      outCanvas.height = targetHeight;
+      outCanvas.getContext('2d').drawImage(canvas, 0, 0, targetWidth, targetHeight);
+      jpegDataUrl = outCanvas.toDataURL('image/jpeg', 0.92);
 
       // Show preview
       const preview = document.getElementById('jpeg-preview');
       const img = document.getElementById('jpeg-img');
       img.src = jpegDataUrl;
-      document.getElementById('jpeg-dims').textContent = `${canvas.width} × ${canvas.height} px`;
+      document.getElementById('jpeg-dims').textContent = `${outCanvas.width} × ${outCanvas.height} px`;
       preview.style.display = 'flex';
 
       // Auto-trigger download immediately
