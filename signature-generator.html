@@ -676,7 +676,7 @@
       const targetWidth = 408;
 
       const canvas = await html2canvas(sig, {
-        scale: targetWidth / rect.width,
+        scale: 3,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
@@ -688,13 +688,21 @@
       sig.style.background = '';
       sig.style.padding = '';
 
-      jpegDataUrl = canvas.toDataURL('image/jpeg', 0.95);
+      // High-quality downsample to exactly 408px wide, height proportional
+      const outCanvas = document.createElement('canvas');
+      outCanvas.width  = targetWidth;
+      outCanvas.height = Math.round(canvas.height * (targetWidth / canvas.width));
+      const ctx = outCanvas.getContext('2d');
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(canvas, 0, 0, outCanvas.width, outCanvas.height);
+      jpegDataUrl = outCanvas.toDataURL('image/jpeg', 0.95);
 
       // Show preview
       const preview = document.getElementById('jpeg-preview');
       const img = document.getElementById('jpeg-img');
       img.src = jpegDataUrl;
-      document.getElementById('jpeg-dims').textContent = `${canvas.width} × ${canvas.height} px`;
+      document.getElementById('jpeg-dims').textContent = `${outCanvas.width} × ${outCanvas.height} px`;
       preview.style.display = 'flex';
 
       // Auto-trigger download immediately
