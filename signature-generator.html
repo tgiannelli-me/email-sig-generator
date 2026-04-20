@@ -675,7 +675,7 @@
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: devicePixelRatio,
+        scale: devicePixelRatio * 0.95,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
