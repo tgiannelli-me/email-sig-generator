@@ -339,7 +339,7 @@
 
   .sig-name {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
     color: #1a1a1a;
     letter-spacing: 0.02em;
@@ -350,7 +350,7 @@
 
   .sig-title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: normal;
     color: #1a1a1a;
     line-height: 1.4;
@@ -360,7 +360,7 @@
 
   .sig-company {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
     color: #1a1a1a;
     display: inline;
@@ -369,7 +369,7 @@
 
   .sig-address {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: normal;
     color: #1a1a1a;
     display: block;
@@ -381,7 +381,7 @@
 
   .sig-contact-line {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     color: #1a1a1a;
     line-height: 1.6;
     display: block;
@@ -396,7 +396,7 @@
 
   .sig-web-line {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 14px;
     color: #1a1a1a;
     line-height: 1.6;
     display: block;
@@ -674,7 +674,7 @@
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: devicePixelRatio * 0.85,
+        scale: devicePixelRatio,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
