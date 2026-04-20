@@ -567,6 +567,7 @@
     <div id="jpeg-preview">
       <div class="jpeg-label">Generated JPEG</div>
       <img id="jpeg-img" src="" alt="Signature JPEG" />
+      <div id="jpeg-dims" style="font-size:12px;color:#555;margin-top:8px;text-align:center;"></div>
     </div>
 
     <p class="hint">Fill in your details on the left · Preview updates live</p>
@@ -675,7 +676,7 @@
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: devicePixelRatio * 0.9,
+        scale: devicePixelRatio * 0.85,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
@@ -693,6 +694,7 @@
       const preview = document.getElementById('jpeg-preview');
       const img = document.getElementById('jpeg-img');
       img.src = jpegDataUrl;
+      document.getElementById('jpeg-dims').textContent = `${canvas.width} × ${canvas.height} px`;
       preview.style.display = 'flex';
 
       // Auto-trigger download immediately
