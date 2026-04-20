@@ -267,7 +267,7 @@
     padding: 28px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.05);
     width: 100%;
-    max-width: 640px;
+    max-width: 900px;
   }
 
   .preview-email-chrome {
@@ -377,6 +377,7 @@
     letter-spacing: 0.08em;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
   }
 
   .sig-contact-line {
@@ -586,7 +587,7 @@
   const logos = {
     ws:   `<div style="display:block;width:90px;height:54px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;" alt="White Spot"></div>`,
     to:   `<div style="display:block;width:90px;height:36px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;margin-top:-54px;" alt="Triple O's"></div>`,
-    both: `<img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;" alt="White Spot + Triple O's">`
+    both: `<div style="display:block;width:90px;height:54px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;" alt="White Spot"></div><div style="display:block;width:90px;height:36px;overflow:hidden;margin-top:18px;"><img src="${LOGO_DATA_URI}" style="display:block;width:90px;height:90px;margin-top:-54px;" alt="Triple O's"></div>`
   };
 
   function getLogoHTML(brand) {
