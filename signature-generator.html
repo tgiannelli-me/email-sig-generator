@@ -677,7 +677,7 @@
       const targetHeight = 122;
 
       const canvas = await html2canvas(sig, {
-        scale: 2,
+        scale: 4,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
@@ -689,12 +689,15 @@
       sig.style.background = '';
       sig.style.padding = '';
 
-      // Resize canvas to exact target dimensions
+      // Resize canvas to exact target dimensions with high-quality smoothing
       const outCanvas = document.createElement('canvas');
       outCanvas.width = targetWidth;
       outCanvas.height = targetHeight;
-      outCanvas.getContext('2d').drawImage(canvas, 0, 0, targetWidth, targetHeight);
-      jpegDataUrl = outCanvas.toDataURL('image/jpeg', 0.92);
+      const ctx = outCanvas.getContext('2d');
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(canvas, 0, 0, targetWidth, targetHeight);
+      jpegDataUrl = outCanvas.toDataURL('image/jpeg', 0.95);
 
       // Show preview
       const preview = document.getElementById('jpeg-preview');
