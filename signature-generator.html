@@ -672,11 +672,10 @@
       sig.style.padding = '5px';
       sig.style.display = 'inline-block';
 
-      const devicePixelRatio = window.devicePixelRatio || 1;
       const rect = sig.getBoundingClientRect();
 
       const canvas = await html2canvas(sig, {
-        scale: devicePixelRatio * 0.85,
+        scale: 1.7,
         width: rect.width,
         height: rect.height,
         backgroundColor: '#ffffff',
