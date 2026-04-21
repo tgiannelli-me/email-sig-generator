@@ -555,7 +555,7 @@
                   <span class="sig-address"><span class="sig-company" id="sig-company">White Spot Limited</span> | <span id="sig-addr">200-8223 Sherbrooke Street</span></span>
                   <span class="sig-address"><span id="sig-cityline">Vancouver BC V5X 4E6</span></span>
                   <span class="sig-address" id="sig-phone-line">P: 604.321.6634</span>
-                  <span class="sig-address" id="sig-web">www.whitespot.ca | www.tripleos.com</span>
+                  <span class="sig-address" id="sig-web">www.whitespot.ca | www.tripleos.ca</span>
                 </td>
               </tr>
             </table>
@@ -586,9 +586,9 @@
   // The image has WS on top (~60%) and Triple O's on bottom (~40%)
   // We use CSS clip/object-position to show each portion
   const logos = {
-    ws:   `<div style="display:block;width:147px;height:88px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:147px;" alt="White Spot"></div>`,
-    to:   `<div style="display:block;width:147px;height:59px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:147px;margin-top:-88px;" alt="Triple O's"></div>`,
-    both: `<div style="display:block;width:147px;height:88px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:147px;" alt="White Spot"></div><div style="display:block;width:147px;height:59px;overflow:hidden;margin-top:29px;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:147px;margin-top:-88px;" alt="Triple O's"></div>`
+    ws:   `<div style="display:block;width:147px;height:93px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:155px;" alt="White Spot"></div>`,
+    to:   `<div style="display:block;width:147px;height:62px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:155px;margin-top:-93px;" alt="Triple O's"></div>`,
+    both: `<div style="display:block;width:147px;height:93px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:155px;" alt="White Spot"></div><div style="display:block;width:147px;height:62px;overflow:hidden;margin-top:29px;"><img src="${LOGO_DATA_URI}" style="display:block;width:147px;height:155px;margin-top:-93px;" alt="Triple O's"></div>`
   };
 
   function getLogoHTML(brand) {
@@ -603,8 +603,8 @@
 
   function getWebLine(brand) {
     if (brand === 'ws') return 'www.whitespot.ca';
-    if (brand === 'to') return 'www.tripleos.com';
-    return 'www.whitespot.ca | www.tripleos.com';
+    if (brand === 'to') return 'www.tripleos.ca';
+    return 'www.whitespot.ca | www.tripleos.ca';
   }
 
   function getCompany(brand) {
