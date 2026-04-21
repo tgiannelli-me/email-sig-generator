@@ -612,9 +612,9 @@
   }
 
   function getCompany(brand, store) {
-    if (brand === 'to') return "Triple O's";
-    const suffix = (store && store.trim()) || 'Limited';
-    return 'White Spot ' + suffix;
+    const trimmed = (store || '').trim();
+    if (brand === 'to') return trimmed ? "Triple O's " + trimmed : "Triple O's";
+    return 'White Spot ' + (trimmed || 'Limited');
   }
 
   // ── UPDATE PREVIEW ──
