@@ -504,6 +504,10 @@
     <div class="form-section">
       <div class="form-section-label">Office</div>
       <div class="field">
+        <label>Store</label>
+        <input type="text" id="f-store" placeholder="Limited" oninput="update()" />
+      </div>
+      <div class="field">
         <label>Address Line 1</label>
         <input type="text" id="f-addr1" value="200-8223 Sherbrooke Street" oninput="update()" />
       </div>
@@ -607,10 +611,10 @@
     return 'www.whitespot.ca | www.tripleos.ca';
   }
 
-  function getCompany(brand) {
-    if (brand === 'ws') return 'White Spot Limited';
+  function getCompany(brand, store) {
     if (brand === 'to') return "Triple O's";
-    return 'White Spot Limited';
+    const suffix = (store && store.trim()) || 'Limited';
+    return 'White Spot ' + suffix;
   }
 
   // ── UPDATE PREVIEW ──
@@ -622,10 +626,11 @@
     const city   = document.getElementById('f-city').value;
     const prov   = document.getElementById('f-prov').value;
     const postal = document.getElementById('f-postal').value;
+    const store  = document.getElementById('f-store').value;
 
     document.getElementById('sig-name').textContent = name.toUpperCase();
     document.getElementById('sig-title').textContent = title;
-    document.getElementById('sig-company').textContent = getCompany(currentBrand);
+    document.getElementById('sig-company').textContent = getCompany(currentBrand, store);
     document.getElementById('sig-addr').textContent = addr1;
     document.getElementById('sig-cityline').textContent = [city, prov, postal].filter(Boolean).join(' ');
     document.getElementById('sig-logos').innerHTML = getLogoHTML(currentBrand);
