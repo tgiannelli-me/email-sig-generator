@@ -329,12 +329,16 @@
   .sig-logo-cell {
     padding-right: 18px;
     vertical-align: middle;
-    border-right: 2px solid #000;
   }
 
   .sig-info-cell {
+    padding-left: 0;
+    vertical-align: top;
+  }
+
+  .sig-info-inner {
+    border-left: 2px solid #000;
     padding-left: 18px;
-    vertical-align: middle;
   }
 
   .sig-name {
@@ -554,12 +558,14 @@
                   <!-- logos injected by JS -->
                 </td>
                 <td class="sig-info-cell">
-                  <span class="sig-name" id="sig-name">Tom Giannelli</span>
-                  <span class="sig-title" id="sig-title">VP, Technology + Business Intelligence</span>
-                  <span class="sig-address"><span class="sig-company" id="sig-company">White Spot Limited</span> | <span id="sig-addr">200-8223 Sherbrooke Street</span></span>
-                  <span class="sig-address"><span id="sig-cityline">Vancouver BC V5X 4E6</span></span>
-                  <span class="sig-address" id="sig-phone-line">P: 604.321.6634</span>
-                  <span class="sig-address" id="sig-web">www.whitespot.ca | www.tripleos.ca</span>
+                  <div class="sig-info-inner">
+                    <span class="sig-name" id="sig-name">Tom Giannelli</span>
+                    <span class="sig-title" id="sig-title">VP, Technology + Business Intelligence</span>
+                    <span class="sig-address"><span class="sig-company" id="sig-company">White Spot Limited</span> | <span id="sig-addr">200-8223 Sherbrooke Street</span></span>
+                    <span class="sig-address"><span id="sig-cityline">Vancouver BC V5X 4E6</span></span>
+                    <span class="sig-address" id="sig-phone-line">P: 604.321.6634</span>
+                    <span class="sig-address" id="sig-web">www.whitespot.ca | www.tripleos.ca</span>
+                  </div>
                 </td>
               </tr>
             </table>
@@ -592,7 +598,7 @@
   const logos = {
     ws:   `<div style="display:block;width:169px;height:107px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;" alt="White Spot"></div>`,
     to:   `<div style="display:block;width:169px;height:71px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;margin-top:-107px;" alt="Triple O's"></div>`,
-    both: `<div style="display:block;width:169px;height:107px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;" alt="White Spot"></div><div style="display:block;width:169px;height:71px;overflow:hidden;margin-top:33px;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;margin-top:-107px;" alt="Triple O's"></div>`
+    both: `<div style="display:block;width:169px;height:107px;overflow:hidden;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;" alt="White Spot"></div><div style="display:block;width:169px;height:71px;overflow:hidden;margin-top:5px;"><img src="${LOGO_DATA_URI}" style="display:block;width:169px;height:178px;margin-top:-107px;" alt="Triple O's"></div>`
   };
 
   function getLogoHTML(brand) {
