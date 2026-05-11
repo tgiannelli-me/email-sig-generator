@@ -8,5 +8,5 @@ pool:
 
 steps:
   - bash: |
-      cp $(Build.SourcesDirectory)/signature-generator.html /var/www/fpt/app/public/signature-generator.html
+      cp $(Build.SourcesDirectory)/signature-generator.html /var/www/signature/signature-generator.html
     displayName: 'Deploy signature-generator.html to FPT-dev-01'
