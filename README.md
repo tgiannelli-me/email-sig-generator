@@ -1,20 +1,22 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Email Signature Generator
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+A single self-contained HTML page (`signature-generator.html`) for building White Spot / Triple O's email signatures. Everything (logos, styles, scripts for rendering a JPEG export) is embedded in the page except two CDN scripts (html2canvas, Microsoft Teams JS SDK), so it can be served as a static file with no backend.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Work deployment
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+`azure-pipelines.yaml` copies `signature-generator.html` to `/var/www/signature/signature-generator.html` on the internal `FPT-dev-01` server whenever `main` is updated.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Running on Synology (Docker)
+
+The repo includes a `Dockerfile` and `docker-compose.yml` that serve the page via nginx.
+
+1. Copy/clone this repo onto the NAS (e.g. via Synology's Git integration, or `git clone` over SSH into a shared folder).
+2. In Synology **Container Manager** → **Project**, create a new project pointing at this folder (it will pick up `docker-compose.yml`) and build it. Or from the CLI on the NAS:
+
+   ```sh
+   docker compose up -d --build
+   ```
+
+3. The page will be available at `http://<nas-ip>:8090`.
+
+To pick up changes after editing `signature-generator.html`, rebuild the project (Container Manager → Project → Build/Action → Rebuild), or run `docker compose up -d --build` again.

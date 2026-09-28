@@ -1,0 +1,7 @@
+services:
+  signature-generator:
+    build: .
+    container_name: signature-generator
+    ports:
+      - "8090:80"
+    restart: unless-stopped
