@@ -315,6 +315,7 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    min-width: 0; /* allow shrinking below fixed-width signature content instead of stretching the grid column */
     background: #eeece7;
     background-image:
       radial-gradient(circle at 20% 80%, rgba(var(--accent-rgb),0.05) 0%, transparent 50%),
@@ -338,6 +339,7 @@
     box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.05);
     width: 100%;
     max-width: 900px;
+    min-width: 0;
   }
 
   .preview-email-chrome {
@@ -602,7 +604,27 @@
 
   @media (max-width: 900px) {
     main { grid-template-columns: 1fr; }
-    .preview-panel { padding: 24px; }
+
+    /* Preview first, form second — grid `order` re-flows without touching markup the JS relies on. */
+    .preview-panel { order: -1; padding: 20px 16px; }
+    .form-panel { padding: 24px 20px; }
+
+    header { padding: 14px 20px; }
+    header h1 { font-size: 17px; }
+
+    .preview-container { padding: 16px; }
+
+    /* The signature markup mimics a real email client's fixed-width rendering, so let it
+       scroll horizontally inside its box instead of blowing out the page width. */
+    .preview-container, .preview-email-chrome { overflow-x: auto; }
+
+    /* 16px prevents iOS Safari from auto-zooming the page when an input is focused. */
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+      font-size: 16px;
+    }
   }
 </style>
 </head>
