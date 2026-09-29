@@ -242,6 +242,13 @@
     gap: 8px;
   }
 
+  /* layout toggle has 6 options — wrap into a grid instead of a single flex row */
+  #layout-toggle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
   .toggle-btn {
     flex: 1;
     padding: 9px 0;
@@ -567,6 +574,279 @@
     height: auto;
   }
 
+  /* ── MINIMAL TEMPLATE (text-only, no color blocks) ── */
+  .minimal-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .minimal-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .minimal-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .minimal-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  .minimal-designation {
+    font-size: 0.35em;
+    font-weight: 400;
+  }
+
+  .minimal-title-row {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .minimal-title-sep {
+    color: #999;
+    margin: 0 5px;
+  }
+
+  .minimal-rule {
+    width: 42px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 4px 0 2px;
+  }
+
+  .minimal-contact {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+
+  /* ── SIDEBAR TEMPLATE (full-height color bar) ── */
+  .sidebar-wrap {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 380px;
+  }
+
+  .sidebar-bar {
+    width: 6px;
+    background: var(--accent);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-right: 18px;
+  }
+
+  .sidebar-content {
+    flex: 1;
+  }
+
+  .sidebar-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .sidebar-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .sidebar-designation {
+    font-size: 0.35em;
+    font-weight: 400;
+  }
+
+  .sidebar-title {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .sidebar-company {
+    font-size: 14px;
+    color: #444;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .sidebar-logo-img {
+    max-width: 90px;
+    max-height: 50px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 12px 0;
+  }
+
+  .sidebar-contact {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .sidebar-address {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── COMPACT TEMPLATE (dense, pipe-separated, no color blocks) ── */
+  .compact-wrap {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .compact-logo-img {
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .compact-line-1 {
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.4;
+  }
+
+  .compact-name {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .compact-designation {
+    font-size: 0.7em;
+    font-weight: 400;
+  }
+
+  .compact-pipe {
+    color: var(--accent);
+    font-weight: 400;
+    margin: 0 6px;
+  }
+
+  .compact-title {
+    font-weight: 400;
+  }
+
+  .compact-company {
+    font-weight: 700;
+  }
+
+  .compact-line-2 {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+
+  /* ── EXECUTIVE TEMPLATE (bordered card, 2-column contact grid) ── */
+  .exec-card {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    background: #fff;
+    min-width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .exec-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .exec-name {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .exec-designation {
+    font-size: 0.4em;
+    font-weight: 400;
+  }
+
+  .exec-title {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .exec-company {
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0.02em;
+    display: block;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .exec-logo-img {
+    max-width: 80px;
+    max-height: 50px;
+    flex-shrink: 0;
+  }
+
+  .exec-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 14px 0;
+  }
+
+  .exec-contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .exec-contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .exec-contact-col-right {
+    align-items: flex-end;
+    text-align: right;
+  }
+
   /* ── HINT ── */
   .hint {
     font-size: 12px;
@@ -660,6 +940,10 @@
       <div class="toggle-group" id="layout-toggle">
         <button type="button" class="toggle-btn active" data-layout="card" onclick="setLayout('card', this)">Card</button>
         <button type="button" class="toggle-btn" data-layout="banner" onclick="setLayout('banner', this)">Banner</button>
+        <button type="button" class="toggle-btn" data-layout="minimal" onclick="setLayout('minimal', this)">Minimal</button>
+        <button type="button" class="toggle-btn" data-layout="sidebar" onclick="setLayout('sidebar', this)">Sidebar</button>
+        <button type="button" class="toggle-btn" data-layout="compact" onclick="setLayout('compact', this)">Compact</button>
+        <button type="button" class="toggle-btn" data-layout="executive" onclick="setLayout('executive', this)">Executive</button>
       </div>
       <div id="banner-color-fields" style="display:none; margin-top:14px;">
         <div class="field-row">
@@ -858,6 +1142,63 @@
                 </div>
               </div>
             </div>
+
+            <div id="sig-minimal" class="sig-template minimal-wrap" style="display:none;">
+              <div class="minimal-name-row">
+                <img id="min-logo-img" class="minimal-avatar" src="" alt="Logo" style="display:none;">
+                <span class="minimal-name" id="min-name"><span id="min-name-text">Jane Smith</span><span class="minimal-designation" id="min-designation"></span></span>
+              </div>
+              <div class="minimal-title-row"><span id="min-title-text">Director of Operations</span><span class="minimal-title-sep">&middot;</span><span id="min-company-text">Acme Inc.</span></div>
+              <div class="minimal-rule"></div>
+              <div class="minimal-contact" id="min-contact-line">555.555.5555 &middot; jane@example.com &middot; www.example.com</div>
+            </div>
+
+            <div id="sig-sidebar" class="sig-template sidebar-wrap" style="display:none;">
+              <div class="sidebar-bar"></div>
+              <div class="sidebar-content">
+                <div class="sidebar-top-row">
+                  <div>
+                    <span class="sidebar-name" id="side-name"><span id="side-name-text">Jane Smith</span><span class="sidebar-designation" id="side-designation"></span></span>
+                    <span class="sidebar-title" id="side-title-text">Director of Operations</span>
+                    <span class="sidebar-company" id="side-company-text">Acme Inc.</span>
+                  </div>
+                  <img id="side-logo-img" class="sidebar-logo-img" src="" alt="Logo" style="display:none;">
+                </div>
+                <div class="sidebar-divider"></div>
+                <div class="sidebar-contact" id="side-contact-line">555.555.5555 &middot; jane@example.com &middot; www.example.com</div>
+                <div class="sidebar-address" id="side-address-line">123 Main Street, Vancouver BC V5X 4E6</div>
+              </div>
+            </div>
+
+            <div id="sig-compact" class="sig-template compact-wrap" style="display:none;">
+              <div class="compact-line-1">
+                <img id="cmp-logo-img" class="compact-logo-img" src="" alt="Logo" style="display:none;">
+                <span class="compact-name" id="cmp-name-text">JANE SMITH</span><span class="compact-designation" id="cmp-designation"></span><span class="compact-pipe">|</span><span class="compact-title" id="cmp-title-text">Director of Operations</span><span class="compact-pipe">|</span><span class="compact-company" id="cmp-company-text">Acme Inc.</span>
+              </div>
+              <div class="compact-line-2" id="cmp-contact-line">555.555.5555 | jane@example.com | www.example.com | 123 Main Street, Vancouver BC V5X 4E6</div>
+            </div>
+
+            <div id="sig-executive" class="sig-template exec-card" style="display:none;">
+              <div class="exec-top-row">
+                <div>
+                  <span class="exec-name" id="exec-name"><span id="exec-name-text">Jane Smith</span><span class="exec-designation" id="exec-designation"></span></span>
+                  <span class="exec-title" id="exec-title-text">Director of Operations</span>
+                  <span class="exec-company" id="exec-company-text">Acme Inc.</span>
+                </div>
+                <img id="exec-logo-img" class="exec-logo-img" src="" alt="Logo" style="display:none;">
+              </div>
+              <div class="exec-divider"></div>
+              <div class="exec-contact-grid">
+                <div class="exec-contact-col">
+                  <span class="exec-contact-line" id="exec-phone-line" style="display:none;">P: 555.555.5555</span>
+                  <span class="exec-contact-line" id="exec-email-line" style="display:none;">jane@example.com</span>
+                </div>
+                <div class="exec-contact-col exec-contact-col-right">
+                  <span class="exec-contact-line" id="exec-web-line" style="display:none;">www.example.com</span>
+                  <span class="exec-contact-line" id="exec-address-line">123 Main Street, Vancouver BC V5X 4E6</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -937,18 +1278,19 @@
   }
 
   // Each field's group (heading vs body) and the element ids that render it,
-  // across both templates. A missing element (e.g. Card has no Email line) is
+  // across all templates. A missing element (e.g. Card has no Email line) is
   // skipped automatically.
   const FONT_FIELDS = [
-    { key: 'name', group: 'heading', elIds: ['sig-name', 'banner-name'] },
-    { key: 'title', group: 'heading', elIds: ['sig-title', 'banner-title-text'] },
-    { key: 'company', group: 'heading', elIds: ['sig-company', 'banner-company-text'] },
-    { key: 'address', group: 'body', elIds: ['sig-addr', 'banner-addr'] },
+    { key: 'name', group: 'heading', elIds: ['sig-name', 'banner-name', 'min-name', 'side-name', 'cmp-name-text', 'exec-name'] },
+    { key: 'title', group: 'heading', elIds: ['sig-title', 'banner-title-text', 'min-title-text', 'side-title-text', 'cmp-title-text', 'exec-title-text'] },
+    { key: 'company', group: 'heading', elIds: ['sig-company', 'banner-company-text', 'min-company-text', 'side-company-text', 'cmp-company-text', 'exec-company-text'] },
+    { key: 'address', group: 'body', elIds: ['sig-addr', 'banner-addr', 'side-address-line', 'exec-address-line'] },
     { key: 'citypostal', group: 'body', elIds: ['sig-cityline', 'banner-cityline'] },
-    { key: 'phone', group: 'body', elIds: ['sig-phone-line', 'banner-phone-t'] },
+    { key: 'phone', group: 'body', elIds: ['sig-phone-line', 'banner-phone-t', 'exec-phone-line'] },
     { key: 'phoneDirect', group: 'body', elIds: ['banner-phone-d'] },
-    { key: 'email', group: 'body', elIds: ['banner-email'] },
-    { key: 'website', group: 'body', elIds: ['sig-web'] },
+    { key: 'email', group: 'body', elIds: ['banner-email', 'exec-email-line'] },
+    { key: 'website', group: 'body', elIds: ['sig-web', 'exec-web-line'] },
+    { key: 'contact', group: 'body', elIds: ['min-contact-line', 'side-contact-line', 'cmp-contact-line'] },
   ];
 
   function applyFonts() {
@@ -1011,12 +1353,15 @@
   }
 
   // ── LAYOUT ──
+  const TEMPLATE_IDS = ['card', 'banner', 'minimal', 'sidebar', 'compact', 'executive'];
+
   function setLayout(layout, el) {
     currentTemplate = layout;
     document.querySelectorAll('#layout-toggle .toggle-btn').forEach(b => b.classList.remove('active'));
     el.classList.add('active');
-    document.getElementById('sig-card').style.display = layout === 'card' ? '' : 'none';
-    document.getElementById('sig-banner').style.display = layout === 'banner' ? '' : 'none';
+    TEMPLATE_IDS.forEach(id => {
+      document.getElementById('sig-' + id).style.display = id === layout ? '' : 'none';
+    });
     document.getElementById('banner-color-fields').style.display = layout === 'banner' ? 'block' : 'none';
     update();
   }
@@ -1032,6 +1377,14 @@
     const digits = raw.replace(/\D/g, '');
     if (digits.length === 10) return `${digits.slice(0,3)}-${digits.slice(3,6)}-${digits.slice(6)}`;
     if (digits.length === 11 && digits[0] === '1') return `${digits.slice(1,4)}-${digits.slice(4,7)}-${digits.slice(7)}`;
+    return raw;
+  }
+
+  function formatPhoneDotted(raw) {
+    if (!raw) return '';
+    const digits = raw.replace(/\D/g, '');
+    if (digits.length === 10) return `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6)}`;
+    if (digits.length === 11 && digits[0] === '1') return `${digits.slice(1,4)}.${digits.slice(4,7)}.${digits.slice(7)}`;
     return raw;
   }
 
@@ -1079,15 +1432,7 @@
 
     const phoneLine = document.getElementById('sig-phone-line');
     if (phone) {
-      // Strip non-digits, then format as NXX.NXX.XXXX
-      const digits = phone.replace(/\D/g, '');
-      let formatted = phone;
-      if (digits.length === 10) {
-        formatted = `${digits.slice(0,3)}.${digits.slice(3,6)}.${digits.slice(6)}`;
-      } else if (digits.length === 11 && digits[0] === '1') {
-        formatted = `${digits.slice(1,4)}.${digits.slice(4,7)}.${digits.slice(7)}`;
-      }
-      phoneLine.textContent = 'P: ' + formatted;
+      phoneLine.textContent = 'P: ' + formatPhoneDotted(phone);
       phoneLine.style.display = 'block';
     }
     else { phoneLine.style.display = 'none'; }
@@ -1142,6 +1487,66 @@
       bannerLogoImg.src = '';
       bannerLogoImg.style.display = 'none';
     }
+
+    // ── Shared derived values for the newer templates ──
+    const fullAddress = [addr1, [city, prov, postal].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+    const contactLine = [phone ? formatPhoneDotted(phone) : '', email, website].filter(Boolean).join(' · ');
+    const compactLine2 = [phone ? formatPhoneDotted(phone) : '', email, website, fullAddress].filter(Boolean).join(' | ');
+
+    // ── Minimal template ──
+    document.getElementById('min-name-text').textContent = name;
+    document.getElementById('min-designation').textContent = designation ? ', ' + designation : '';
+    document.getElementById('min-title-text').textContent = title;
+    document.getElementById('min-company-text').textContent = company;
+    document.getElementById('min-contact-line').textContent = contactLine;
+    const minLogoImg = document.getElementById('min-logo-img');
+    if (logoDataUri) { minLogoImg.src = logoDataUri; minLogoImg.style.display = 'block'; }
+    else { minLogoImg.src = ''; minLogoImg.style.display = 'none'; }
+
+    // ── Sidebar template ──
+    document.getElementById('side-name-text').textContent = name;
+    document.getElementById('side-designation').textContent = designation ? ', ' + designation : '';
+    document.getElementById('side-title-text').textContent = title;
+    document.getElementById('side-company-text').textContent = company;
+    document.getElementById('side-contact-line').textContent = contactLine;
+    document.getElementById('side-address-line').textContent = fullAddress;
+    const sideLogoImg = document.getElementById('side-logo-img');
+    if (logoDataUri) { sideLogoImg.src = logoDataUri; sideLogoImg.style.display = 'block'; }
+    else { sideLogoImg.src = ''; sideLogoImg.style.display = 'none'; }
+
+    // ── Compact template ──
+    document.getElementById('cmp-name-text').textContent = name.toUpperCase();
+    document.getElementById('cmp-designation').textContent = designation ? ', ' + designation : '';
+    document.getElementById('cmp-title-text').textContent = title;
+    document.getElementById('cmp-company-text').textContent = company;
+    document.getElementById('cmp-contact-line').textContent = compactLine2;
+    const cmpLogoImg = document.getElementById('cmp-logo-img');
+    if (logoDataUri) { cmpLogoImg.src = logoDataUri; cmpLogoImg.style.display = 'inline'; }
+    else { cmpLogoImg.src = ''; cmpLogoImg.style.display = 'none'; }
+
+    // ── Executive template ──
+    document.getElementById('exec-name-text').textContent = name;
+    document.getElementById('exec-designation').textContent = designation ? ', ' + designation : '';
+    document.getElementById('exec-title-text').textContent = title;
+    document.getElementById('exec-company-text').textContent = company;
+
+    const execPhoneLine = document.getElementById('exec-phone-line');
+    if (phone) { execPhoneLine.textContent = 'P: ' + formatPhoneDotted(phone); execPhoneLine.style.display = 'block'; }
+    else { execPhoneLine.style.display = 'none'; }
+
+    const execEmailLine = document.getElementById('exec-email-line');
+    if (email) { execEmailLine.textContent = email; execEmailLine.style.display = 'block'; }
+    else { execEmailLine.style.display = 'none'; }
+
+    const execWebLine = document.getElementById('exec-web-line');
+    if (website) { execWebLine.textContent = website; execWebLine.style.display = 'block'; }
+    else { execWebLine.style.display = 'none'; }
+
+    document.getElementById('exec-address-line').textContent = fullAddress;
+
+    const execLogoImg = document.getElementById('exec-logo-img');
+    if (logoDataUri) { execLogoImg.src = logoDataUri; execLogoImg.style.display = 'block'; }
+    else { execLogoImg.src = ''; execLogoImg.style.display = 'none'; }
 
     applyFonts();
   }
